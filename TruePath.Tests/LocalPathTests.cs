@@ -16,10 +16,10 @@ public class LocalPathTests
         Random.Shared.Shuffle(result.ToArray());
         var path = new string(result);
 
-        var a = new LocalPath(path);
+        var localPath = new LocalPath(path);
 
         // Act
-        var parent = a.Parent;
+        var parent = localPath.Parent;
 
         // Assert
         Assert.Null(parent);
@@ -37,10 +37,10 @@ public class LocalPathTests
     public void ExclusivelyRelativePath(string path)
     {
         // Arrange
-        var a = new LocalPath(path);
+        var localPath = new LocalPath(path);
 
         // Act
-        var parent = a.Parent;
+        var parent = localPath.Parent;
 
         // Assert
         Assert.Null(parent);
